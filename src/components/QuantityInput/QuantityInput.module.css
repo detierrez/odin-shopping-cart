@@ -1,0 +1,10 @@
+.quantity-input {
+  input {
+    min-width: 0;
+    field-sizing: content;
+  }
+
+  button {
+    padding: 0.2em;
+  }
+}

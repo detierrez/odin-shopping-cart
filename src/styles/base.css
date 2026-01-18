@@ -1,0 +1,43 @@
+/* || General styles */
+
+input {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+/* || Typography */
+
+/* … */
+
+/* || Header and Main Navigation */
+
+/* || UTILITIES */
+
+.no-bullets {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* || SITEWIDE */
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+#root {
+  /* max-width: 1280px; */
+  display: flex;
+  flex-direction: column;
+  > *:nth-child(2) {
+    flex-grow: 1;
+  }
+}
+
+html {
+  --half-second: 500ms;
+  --quarter-second: 250ms;
+}
