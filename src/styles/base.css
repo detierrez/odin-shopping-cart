@@ -40,4 +40,12 @@ body,
 html {
   --half-second: 500ms;
   --quarter-second: 250ms;
+  --base-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }

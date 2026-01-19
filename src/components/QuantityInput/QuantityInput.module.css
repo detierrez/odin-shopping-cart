@@ -1,4 +1,5 @@
 .quantity-input {
+  display: flex;
   input {
     min-width: 0;
     field-sizing: content;

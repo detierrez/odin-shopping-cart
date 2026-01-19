@@ -1,0 +1,54 @@
+.page {
+  padding: 1em;
+  display: grid;
+  grid-template-columns: min-content 1fr min-content min-content;
+  grid-template-rows: repeat(auto-fit, 96px);
+  gap: 0.5em;
+
+  > * {
+    grid-column: 1 / -1;
+    display: grid;
+    grid-template-columns: subgrid;
+    grid-template-rows: subgrid;
+    align-items: center;
+    justify-items: center;
+
+    > :nth-child(2) {
+      justify-self: start;
+    }
+  }
+}
+
+.page > img {
+  max-width: 200px;
+}
+
+.card {
+  background-color: #fff2;
+  box-shadow: var(--base-shadow);
+  border-radius: 5px;
+
+  padding: 1em;
+}
+
+.card img {
+  max-width: 50px;
+  max-height: 60px;
+}
+
+.card button {
+  padding: 0.3em;
+  line-height: 0;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  width: 2em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > img {
+    min-width: 0;
+    min-height: 0;
+  }
+}

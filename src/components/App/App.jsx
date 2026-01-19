@@ -1,14 +1,25 @@
 import { Outlet, useLocation } from "react-router";
-import Navbar from "../Navbar/Navbar";
-import useProducts from "../../hooks/useProducts";
 import { useState } from "react";
+import useProducts from "../../hooks/useProducts";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 
 export default function App() {
   const location = useLocation();
   const isHome = location.pathname === "/";
 
   const { products, isLoading } = useProducts();
-  const [cart, setCart] = useState({});
+  const [cart, setCart] = useState({
+    1: 2,
+    2: 3,
+    3: 1,
+    4: 1,
+    5: 1,
+    6: 1,
+    7: 1,
+    8: 1,
+    9: 1,
+  });
 
   const totalItems = Object.values(cart).reduce((sum, qty) => sum + qty, 0);
 
@@ -33,6 +44,7 @@ export default function App() {
       <Outlet
         context={{ products, isLoading, cart, addToCart, updateCart }}
       ></Outlet>
+      {/* <Footer /> */}
     </>
   );
 }

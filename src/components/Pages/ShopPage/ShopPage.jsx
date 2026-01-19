@@ -7,7 +7,7 @@ export default function ShopPage() {
   if (isLoading) return <h1>Loading items</h1>;
 
   return (
-    <div>
+    <div className="page">
       {products.map((product) => (
         <div className="card" key={product.id}>
           <div>{product.title}</div>
