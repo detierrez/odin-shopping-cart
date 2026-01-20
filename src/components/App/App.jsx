@@ -32,7 +32,7 @@ export default function App() {
     if (quantity <= 0) {
       delete copy[id];
     } else {
-      copy[id] = quantity;
+      copy[id] = Math.min(quantity, 999);
     }
 
     setCart(copy);

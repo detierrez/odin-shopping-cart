@@ -1,0 +1,8 @@
+.rating {
+  display: inline-flex;
+  vertical-align: text-bottom;
+  svg {
+    fill: var(--accent-color);
+    height: 1.5em;
+  }
+}

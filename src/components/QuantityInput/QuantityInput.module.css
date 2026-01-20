@@ -1,11 +1,47 @@
 .quantity-input {
+  --pill-radius: 999px;
+  border-radius: var(--pill-radius);
+  background-color: var(--accent-color);
   display: flex;
-  input {
-    min-width: 0;
-    field-sizing: content;
+
+  > input {
+    flex-basis: 1em;
+  }
+  > * {
+    flex-grow: 1;
+  }
+}
+
+.quantity-input input {
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  min-width: 0;
+}
+
+.quantity-input button {
+  background-color: transparent;
+  padding: 0;
+
+  &:first-child {
+    border-top-left-radius: var(--pill-radius);
+    border-bottom-left-radius: var(--pill-radius);
   }
 
-  button {
-    padding: 0.2em;
+  &:last-child {
+    border-top-right-radius: var(--pill-radius);
+    border-bottom-right-radius: var(--pill-radius);
   }
+}
+
+.quantity-input .quantity-input button
+
+/* Remove arrows off input type number */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type="number"] {
+  -moz-appearance: textfield;
 }

@@ -6,6 +6,11 @@ input {
   line-height: inherit;
 }
 
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
 /* || Typography */
 
 /* … */
@@ -41,6 +46,7 @@ html {
   --half-second: 500ms;
   --quarter-second: 250ms;
   --base-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 10px 20px rgba(0, 0, 0, 0.15);
+  --accent-color: rgb(153, 133, 233);
 }
 
 .page {

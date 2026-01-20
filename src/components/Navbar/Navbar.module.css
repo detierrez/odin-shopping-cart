@@ -1,6 +1,6 @@
 .navbar {
   color: black;
-  background-color: rgb(184, 110, 110);
+  background-color: var(--accent-color);
   min-height: 64px;
   display: grid;
   grid-template-columns: repeat(2, max-content);
