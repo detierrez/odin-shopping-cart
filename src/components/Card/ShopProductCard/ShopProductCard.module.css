@@ -1,0 +1,51 @@
+.card {
+  composes: card from "../Card.module.css";
+}
+
+.card {
+  display: grid;
+  grid-template:
+    "img   img"
+    "title title" 1fr
+    "price price"
+    "rate  count"
+    "input input"
+    / 1fr min-content;
+  gap: 0.25em 0.5em;
+}
+
+.card_img {
+  grid-area: img;
+  aspect-ratio: 1;
+
+  padding: 1em;
+  > * {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.card_title {
+  grid-area: title;
+}
+
+.card_price {
+  font-weight: bold;
+
+  grid-area: price;
+}
+
+.card_rate {
+  grid-area: rate;
+}
+
+.card_count {
+  align-self: self-end;
+  font-size: 0.8rem;
+  grid-area: count;
+}
+
+.card_input {
+  grid-area: input;
+}

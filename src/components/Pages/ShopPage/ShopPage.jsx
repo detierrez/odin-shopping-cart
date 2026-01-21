@@ -3,6 +3,7 @@ import { useOutletContext } from "react-router";
 import QuantityInput from "../../QuantityInput/QuantityInput";
 import Card from "../../Card/Card";
 import StarRating from "../../StarRating/StarRating";
+import ShopProductCard from "../../Card/ShopProductCard/ShopProductCard";
 
 export default function ShopPage() {
   const { products, isLoading, cart } = useOutletContext();
@@ -23,20 +24,21 @@ export default function ShopPage() {
       </Card>
       <div className={`${styles["cards-container"]}`}>
         {products.map((product) => (
-          <Card key={product.id}>
-            <div className={styles["img-container"]}>
-              <img src={product.image} alt="" />
-            </div>
-            <div>{product.title}</div>
-            <div style={{fontWeight: "bold"}}>${product.price}</div>
-            <div>
-              <StarRating rating={product.rating.rate} />
-              <span style={{ fontSize: "0.8rem" }}>
-                ({product.rating.count})
-              </span>
-            </div>
-            <QuantityInput id={product.id} quantity={cart[product.id] ?? 0} />
-          </Card>
+          <ShopProductCard key={product.id}>
+            {{
+              img: <img src={product.image} alt="" />,
+              title: product.title,
+              price: product.price,
+              rate: <StarRating  rating={product.rating.rate} />,
+              reviewCount: product.rating.count,
+              input: (
+                <QuantityInput
+                  id={product.id}
+                  quantity={cart[product.id] ?? 0}
+                />
+              ),
+            }}
+          </ShopProductCard>
         ))}
       </div>
     </div>

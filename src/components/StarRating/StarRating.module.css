@@ -1,8 +1,8 @@
 .rating {
-  display: inline-flex;
-  vertical-align: text-bottom;
+  flex-grow: 1;
   svg {
+    vertical-align: text-bottom;
     fill: var(--accent-color);
-    height: 1.5em;
+    max-width: calc(100% / 5);
   }
 }
