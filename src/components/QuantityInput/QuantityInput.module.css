@@ -1,13 +1,16 @@
 .quantity-input {
   --pill-radius: 999px;
+  background-color: #1a1a1a;
   border-radius: var(--pill-radius);
-  background-color: var(--accent-color);
-  display: flex;
+  display: inline-flex;
+  max-width: 100%;
 
   > input {
     flex-basis: 1em;
   }
-  > * {
+
+  > input,
+  > button {
     flex-grow: 1;
   }
 }
@@ -34,6 +37,10 @@
   }
 }
 
+.accentuated {
+  background-color: var(--accent-color);
+}
+
 .quantity-input .quantity-input button
 
 /* Remove arrows off input type number */
@@ -44,4 +51,5 @@ input::-webkit-inner-spin-button {
 }
 input[type="number"] {
   -moz-appearance: textfield;
+  appearance: initial;
 }

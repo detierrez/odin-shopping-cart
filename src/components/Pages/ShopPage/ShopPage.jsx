@@ -29,12 +29,13 @@ export default function ShopPage() {
               img: <img src={product.image} alt="" />,
               title: product.title,
               price: product.price,
-              rate: <StarRating  rating={product.rating.rate} />,
+              rate: <StarRating rating={product.rating.rate} />,
               reviewCount: product.rating.count,
               input: (
                 <QuantityInput
                   id={product.id}
                   quantity={cart[product.id] ?? 0}
+                  isAccentuated
                 />
               ),
             }}

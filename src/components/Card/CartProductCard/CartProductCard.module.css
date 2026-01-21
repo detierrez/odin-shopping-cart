@@ -1,0 +1,66 @@
+/* .card {
+  composes: card from "../Card.module.css";
+} */
+
+.card {
+  /* display: grid;
+  grid-template:
+    "img   img"
+    "title title" 1fr
+    "price price"
+    "rate  count"
+    "input input"
+    / 1fr min-content;
+  gap: 0.25em 0.5em; */
+
+  /* border-bottom: 0.5px solid #6666;
+  gap: 1em;
+
+  height: 96px;
+  display: flex;
+  align-items: center; */
+}
+
+.card {
+  border-bottom: 0.5px solid #6666;
+
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-template-rows: subgrid;
+  align-items: center;
+  justify-items: center;
+}
+
+.card_img {
+  box-sizing: border-box;
+  aspect-ratio: 1;
+  height: 100%;
+
+  padding: 1em;
+  > * {
+    object-fit: contain;
+  }
+}
+
+.card_title {
+  font-size: 0.75rem;
+  max-width: 100%;
+  max-height: 100%;
+
+  justify-self: start;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.card_input {
+  grid-column-start: -2;
+  grid-column-end: span 1;
+  max-width: 100%;
+}
+
+.card_price {
+  flex-shrink: 0;
+  font-weight: bold;
+  justify-self: left;
+}
