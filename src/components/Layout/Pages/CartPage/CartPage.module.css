@@ -1,0 +1,10 @@
+.page {
+  composes: flex-column-center from "@commonStyles/flex.module.css";
+
+  padding: 2em 0;
+  gap: 0.5em;
+}
+
+.flexStart {
+  composes: flex-start from "@commonStyles/flex.module.css";
+}

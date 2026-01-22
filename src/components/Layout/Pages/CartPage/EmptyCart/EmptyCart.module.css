@@ -1,0 +1,9 @@
+.centerColumn {
+  composes: flex-column-center from "@commonStyles/flex.module.css";
+}
+
+.img {
+  display: block;
+  aspect-ratio: 1;
+  max-height: 200px;
+}

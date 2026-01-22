@@ -1,0 +1,3 @@
+.centerColumn {
+  composes: flex-column-center from "@commonStyles/flex.module.css";
+}

@@ -1,0 +1,10 @@
+.card {
+  background-color: var(--background-color, #fff2);
+  box-shadow: var(--base-shadow);
+  border-radius: 5px;
+}
+
+.accentuated {
+  background-color: var(--accent-color);
+  color: black;
+}

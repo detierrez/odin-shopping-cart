@@ -1,8 +1,9 @@
 .card {
-  composes: card from "../Card.module.css";
+  composes: card from "@commonStyles/card.module.css";
 }
 
 .card {
+  padding: 1em;
   display: grid;
   grid-template:
     "img   img"
@@ -27,6 +28,8 @@
 }
 
 .card_title {
+  font-size: 0.8em;
+
   grid-area: title;
 }
 

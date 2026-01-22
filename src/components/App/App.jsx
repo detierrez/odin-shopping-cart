@@ -1,8 +1,8 @@
 import { Outlet, useLocation } from "react-router";
 import { useState } from "react";
 import useProducts from "../../hooks/useProducts";
-import Navbar from "../Navbar/Navbar";
-import Footer from "../Footer/Footer";
+import Navbar from "../Layout/Navbar/Navbar";
+import Footer from "../Layout/Footer/Footer";
 
 export default function App() {
   const location = useLocation();

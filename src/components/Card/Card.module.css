@@ -1,12 +1,7 @@
 .card {
-  background-color: var(--background-color, #fff2);
-  box-shadow: var(--base-shadow);
-  border-radius: 5px;
-
-  padding: 1em;
+  composes: card from "@commonStyles/card.module.css";
 }
 
 .accentuated {
-  background-color: var(--accent-color);
-  color: black;
+  composes: accentuated from "@commonStyles/card.module.css";
 }

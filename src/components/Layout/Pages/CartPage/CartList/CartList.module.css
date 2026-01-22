@@ -1,0 +1,31 @@
+.card {
+  composes: card from "@commonStyles/card.module.css";
+}
+
+.checkout-layout {
+  padding: 2em 1em;
+
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+
+  gap: 0.5em;
+}
+
+.checkout-button {
+  background-color: var(--accent-color);
+
+  align-self: flex-end;
+  white-space: nowrap;
+}
+
+.checkout-total-label {
+  align-self: flex-end;
+}
+
+.checkout-total-number {
+  font-weight: bold;
+  font-size: 1.2rem;
+
+  align-self: flex-end;
+}

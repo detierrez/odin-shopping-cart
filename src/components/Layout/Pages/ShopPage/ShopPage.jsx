@@ -1,9 +1,9 @@
 import styles from "./ShopPage.module.css";
 import { useOutletContext } from "react-router";
-import QuantityInput from "../../QuantityInput/QuantityInput";
-import Card from "../../Card/Card";
-import StarRating from "../../StarRating/StarRating";
-import ShopProductCard from "../../Card/ShopProductCard/ShopProductCard";
+import QuantityInput from "../../../QuantityInput/QuantityInput";
+import Card from "../../../Card/Card";
+import StarRating from "../../../StarRating/StarRating";
+import ShopProduct from "./ShopProduct/ShopProduct";
 
 export default function ShopPage() {
   const { products, isLoading, cart } = useOutletContext();
@@ -24,7 +24,7 @@ export default function ShopPage() {
       </Card>
       <div className={`${styles["cards-container"]}`}>
         {products.map((product) => (
-          <ShopProductCard key={product.id}>
+          <ShopProduct key={product.id}>
             {{
               img: <img src={product.image} alt="" />,
               title: product.title,
@@ -39,7 +39,7 @@ export default function ShopPage() {
                 />
               ),
             }}
-          </ShopProductCard>
+          </ShopProduct>
         ))}
       </div>
     </div>
