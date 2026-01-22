@@ -1,10 +1,15 @@
 .page {
-  composes: flex-column-center from "@commonStyles/flex.module.css";
-
-  padding: 2em 0;
-  gap: 0.5em;
+  margin: 0 auto;
+  max-width: 700px;
+  padding: 2em 0.5em;
+  composes: flex-column from "@commonStyles/flex.module.css";
+  gap: 1em;
 }
 
 .flexStart {
   composes: flex-start from "@commonStyles/flex.module.css";
+}
+
+.accent {
+  color: var(--accent-color);
 }

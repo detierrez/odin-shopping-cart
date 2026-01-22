@@ -32,8 +32,8 @@ export default function CartPage() {
 
     content = (
       <>
-        <Link className={styles.flexStart} to="/shop">
-        ← Continue shopping
+        <Link className={`${styles.flexStart} ${styles.accent}`} to="/shop">
+          ← Continue shopping
         </Link>
         <CartList total={total}>{cartItems}</CartList>
       </>

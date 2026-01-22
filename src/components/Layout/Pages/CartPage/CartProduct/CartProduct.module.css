@@ -1,19 +1,18 @@
-.card {
+
+
+.product {
   border-bottom: 0.5px solid #6666;
 
-  height: 96px;
-  max-width: 100%;
-  display: flex;
-  align-items: center;
+  padding: 1em 0;
+  composes: flex-row-center from "@commonStyles/flex.module.css";
   gap: 1em;
 }
 
-.card_img {
+.productImg {
+  flex-shrink: 0;
   box-sizing: border-box;
+  max-height: 96px;
   aspect-ratio: 1;
-  height: 100%;
-
-  padding: 1em 0;
   > img {
     max-height: 100%;
     max-width: 100%;
@@ -21,24 +20,25 @@
   }
 }
 
-.card_title {
+.productTitle {
   font-size: 0.75rem;
   flex-grow: 1;
-  overflow: hidden;
-  max-height: 100%;
-  text-overflow: ellipsis;
 }
 
-.card_price {
-  flex-shrink: 0;
+.productInput {
+  composes: flex-column-center from "@commonStyles/flex.module.css";
+  justify-content: flex-end;
+}
+
+.productPrice {
   font-weight: bold;
-  justify-self: left;
-  text-align: right;
-  width: 7ch;
 }
 
-.card_input {
-  grid-column-start: -2;
-  grid-column-end: span 1;
-  width: 60px;
+@media (width <= 480px) {
+  .product {
+    flex-direction: column;
+  }
+  .productTitle {
+    text-align: center;
+  }
 }

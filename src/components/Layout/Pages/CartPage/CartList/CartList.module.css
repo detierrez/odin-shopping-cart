@@ -3,7 +3,7 @@
 }
 
 .checkout-layout {
-  padding: 2em 1em;
+  padding: 3em 2em;
 
   display: flex;
   flex-direction: column;
@@ -20,6 +20,7 @@
 }
 
 .checkout-total-label {
+  padding-top: 1em;
   align-self: flex-end;
 }
 

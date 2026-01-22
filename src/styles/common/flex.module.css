@@ -2,6 +2,11 @@
   display: flex;
 }
 
+.flex-row-center {
+  composes: flex;
+  align-items: center;
+}
+
 .flex-column {
   composes: flex;
   flex-direction: column;
@@ -10,6 +15,12 @@
 .flex-column-center {
   composes: flex-column;
   align-items: center;
+  justify-content: center;
+}
+
+.flex-column-end {
+  composes: flex-column;
+  align-items: end;
   justify-content: center;
 }
 

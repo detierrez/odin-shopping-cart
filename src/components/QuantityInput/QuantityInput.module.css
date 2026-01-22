@@ -3,11 +3,7 @@
   background-color: #1a1a1a;
   border-radius: var(--pill-radius);
   display: inline-flex;
-  max-width: 100%;
-
-  > input {
-    flex-basis: 1em;
-  }
+  width: 100%;
 
   > input,
   > button {
@@ -19,12 +15,16 @@
   background-color: transparent;
   border: none;
   text-align: center;
-  min-width: 0;
+  
+  min-width: 3.5ch;
+  width: 0;
 }
 
 .quantity-input button {
   background-color: transparent;
   padding: 0;
+  min-width: 2em;
+  width: 0;
 
   &:first-child {
     border-top-left-radius: var(--pill-radius);
