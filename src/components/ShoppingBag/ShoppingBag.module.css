@@ -12,7 +12,7 @@
   background-color: white;
   border-radius: 50%;
   font-weight: bold;
-  font-size: 40%;
+  font-size: 55%;
 
   position: absolute;
   top: -10%;
@@ -29,4 +29,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.tooMany {
+  font-size: 45%;
 }
