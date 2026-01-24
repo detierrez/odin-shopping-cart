@@ -1,0 +1,32 @@
+.bag {
+  color: inherit;
+  line-height: 0;
+  font-size: 2.25rem;
+  width: 1em;
+
+  position: relative;
+}
+
+.count {
+  color: inherit;
+  background-color: white;
+  border-radius: 50%;
+  font-weight: bold;
+  font-size: 40%;
+
+  position: absolute;
+  top: -10%;
+  right: -10%;
+
+  transform-origin: top right;
+  transform: scale(0.5);
+
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 1;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
