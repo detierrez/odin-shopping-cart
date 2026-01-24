@@ -1,30 +1,75 @@
-import styles from "./ShopPage.module.css";
-import { useOutletContext } from "react-router";
+import c from "./ShopPage.module.css";
+import Product from "./Product/Product";
 import QuantityInput from "../../../QuantityInput/QuantityInput";
-import Card from "../../../Card/Card";
 import StarRating from "../../../StarRating/StarRating";
-import ShopProduct from "./ShopProduct/ShopProduct";
+import upperCaseFirst from "../../../../utils/upperCaseFirst";
+import { useState } from "react";
+import { useOutletContext } from "react-router";
+
+const categories = [
+  "all",
+  "men's clothing",
+  "women's clothing",
+  "jewelery",
+  "electronics",
+];
+
+const sortFunctions = {
+  ["Featured"]: undefined,
+  ["Price: Low to High"]: (pA, pB) => pA.price - pB.price,
+  ["Price: High to Low"]: (pA, pB) => pB.price - pA.price,
+  ["Reviews"]: (pA, pB) => pB.rating.rate - pA.rating.rate,
+};
 
 export default function ShopPage() {
   const { products, isLoading, cart } = useOutletContext();
+  const [category, setCategory] = useState("all");
+  const [sortingFn, setSortingFn] = useState(() => sortFunctions.featured);
+
+  const filteredProducts =
+    category === "all"
+      ? products
+      : products.filter((product) => product.category === category);
+
+  const sortedProducts = filteredProducts.toSorted(sortingFn);
 
   if (isLoading) return <h1>Loading items</h1>;
 
   return (
-    <div className={`page ${styles.page}`}>
-      <Card isAccentuated={true}>
-        <h2>Categories</h2>
-        <ul>
-          <li>All</li>
-          <li>Men's clothing</li>
-          <li>Women's clothing</li>
-          <li>Jewelry</li>
-          <li>Electronics</li>
-        </ul>
-      </Card>
-      <div className={`${styles["cards-container"]}`}>
-        {products.map((product) => (
-          <ShopProduct key={product.id}>
+    <div className={c.page}>
+      <div className={c.controls}>
+        <span className={c.noWrap}>
+          Categories:{" "}
+          <select
+            name="categories"
+            id="categories"
+            onChange={(e) => setCategory(e.target.value)}
+          >
+            {categories.map((category) => (
+              <option key={category} value={category}>
+                {upperCaseFirst(category)}
+              </option>
+            ))}
+          </select>
+        </span>{" "}
+        <span className={c.noWrap}>
+          Filter:{" "}
+          <select
+            name="filter"
+            id="filter"
+            onChange={(e) => setSortingFn(() => sortFunctions[e.target.value])}
+          >
+            {Object.entries(sortFunctions).map(([key, fn]) => (
+              <option key={key} value={key}>
+                {key}
+              </option>
+            ))}
+          </select>
+        </span>
+      </div>
+      <div className={`${c.productsContainer}`}>
+        {sortedProducts.map((product) => (
+          <Product key={product.id}>
             {{
               img: <img src={product.image} alt="" />,
               title: product.title,
@@ -39,7 +84,7 @@ export default function ShopPage() {
                 />
               ),
             }}
-          </ShopProduct>
+          </Product>
         ))}
       </div>
     </div>

@@ -1,8 +1,6 @@
-.card {
+.product {
   composes: card from "@commonStyles/card.module.css";
-}
 
-.card {
   padding: 1em;
   display: grid;
   grid-template:
@@ -11,44 +9,49 @@
     "price price"
     "rate  count"
     "input input"
-    / 1fr min-content;
+    / 1fr 3ch;
   gap: 0.25em 0.5em;
 }
 
-.card_img {
+.productImg {
   grid-area: img;
   aspect-ratio: 1;
 
+  composes: flex-row-center-center from "@commonStyles/flex.module.css";
   padding: 1em;
-  > * {
+  > img {
     width: 100%;
     height: 100%;
     object-fit: contain;
   }
 }
 
-.card_title {
+.productTitle {
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 0.8em;
 
   grid-area: title;
+  line-height: 1.5;
+  height: 4.5em;
 }
 
-.card_price {
+.productPrice {
   font-weight: bold;
 
   grid-area: price;
 }
 
-.card_rate {
+.productRate {
   grid-area: rate;
 }
 
-.card_count {
+.productReviewCount {
   align-self: self-end;
   font-size: 0.8rem;
   grid-area: count;
 }
 
-.card_input {
+.productInput {
   grid-area: input;
 }

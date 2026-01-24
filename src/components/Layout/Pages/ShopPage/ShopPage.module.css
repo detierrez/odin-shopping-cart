@@ -1,28 +1,22 @@
 .page {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: stretch;
-  gap: 2em;
+  max-width: 700px;
+  margin: 0 auto; /* to center content, shrinks as side-effect*/
+  width: 100%; /* to revert shrinking */
+
+  padding: 2em 0.5em;
 }
 
-@media (width>=1024px) {
-  .page {
-    grid-template-columns: 1fr 3fr;
-  }
+.controls {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.noWrap {
+  white-space: nowrap;
 }
 
-.cards-container {
+.productsContainer {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1em;
-}
-
-.img-container {
-  aspect-ratio: 1;
-}
-
-img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
 }
