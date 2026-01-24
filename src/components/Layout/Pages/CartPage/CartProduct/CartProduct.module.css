@@ -1,5 +1,3 @@
-
-
 .product {
   border-bottom: 0.5px solid #6666;
 
@@ -13,6 +11,8 @@
   box-sizing: border-box;
   max-height: 96px;
   aspect-ratio: 1;
+
+  composes: flex-row-center-center from "@commonStyles/flex.module.css";
   > img {
     max-height: 100%;
     max-width: 100%;
