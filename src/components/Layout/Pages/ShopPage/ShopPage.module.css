@@ -1,5 +1,5 @@
 .page {
-  max-width: 700px;
+  max-width: var(--main-strip-width);
   margin: 0 auto; /* to center content, shrinks as side-effect*/
   width: 100%; /* to revert shrinking */
 

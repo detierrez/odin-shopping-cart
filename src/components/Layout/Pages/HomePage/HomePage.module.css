@@ -1,3 +1,35 @@
-.centerColumn {
+.page {
+  font-family: "Bebas Neue";
+  text-align: center;
+
+  max-width: var(--main-strip-width);
+  margin: 0 auto;
+  width: 100%;
+
   composes: flex-column-center from "@commonStyles/flex.module.css";
+}
+
+.background {
+  z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  background-image: url("/background.jpg");
+  background-size: cover;
+  background-position: center;
+  filter: brightness(0.5);
+}
+
+.page h1 {
+  margin: 0;
+}
+
+.page a {
+  margin-top: 5em; /* visual tweak */
+  h2 {
+    margin: 0;
+  }
 }

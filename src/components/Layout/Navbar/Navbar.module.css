@@ -2,8 +2,15 @@
   color: black;
   background-color: var(--accent-color);
   min-height: 64px;
-  display: grid;
-  grid-template-columns: repeat(2, max-content);
+}
+
+.linksContainer {
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  max-width: var(--main-strip-width);
+  padding: 0 1em;
+  display: flex;
   align-items: center;
   justify-content: space-between;
 }
@@ -11,14 +18,38 @@
 .transparent {
   color: white;
   background-color: transparent;
+
+  .logo img {
+    filter: invert(1);
+  }
 }
 
 .navbar a {
   color: inherit;
 }
 
-/* .navbar {
+.navbar {
   transition:
     background-color var(--quarter-second),
     color var(--quarter-second);
-} */
+}
+
+.logo img {
+  transition: filter var(--quarter-second);
+}
+
+.logo {
+  font-family: "Bebas Neue";
+  user-select: none;
+  font-size: 1.5rem;
+}
+
+.logo img {
+  height: 1.2em;
+  vertical-align: middle;
+  margin-right: 0.2em;
+}
+
+.logo span {
+  vertical-align: middle;
+}

@@ -9,6 +9,7 @@ export default function App() {
   const isHome = location.pathname === "/";
 
   const { products, isLoading } = useProducts();
+  console.log(products)
   const [cart, setCart] = useState({
     1: 2,
     2: 3,
