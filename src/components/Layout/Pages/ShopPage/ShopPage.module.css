@@ -7,10 +7,13 @@
 }
 
 .controls {
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
+  margin-bottom: 1em;
+
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center; */
 }
+
 .noWrap {
   white-space: nowrap;
 }

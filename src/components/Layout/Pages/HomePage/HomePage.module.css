@@ -28,7 +28,7 @@
 }
 
 .page a {
-  margin-top: 5em; /* visual tweak */
+  color: var(--accent-color);
   h2 {
     margin: 0;
   }

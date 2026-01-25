@@ -5,6 +5,7 @@ import StarRating from "../../../StarRating/StarRating";
 import upperCaseFirst from "../../../../utils/upperCaseFirst";
 import { useState } from "react";
 import { useOutletContext } from "react-router";
+import Dropdown from "../../../Dropdown/Dropdown";
 
 const categories = [
   "all",
@@ -24,48 +25,34 @@ const sortFunctions = {
 export default function ShopPage() {
   const { products, isLoading, cart } = useOutletContext();
   const [category, setCategory] = useState("all");
-  const [sortingFn, setSortingFn] = useState(() => sortFunctions.featured);
+  const [sorting, setSorting] = useState("Featured");
 
   const filteredProducts =
     category === "all"
       ? products
       : products.filter((product) => product.category === category);
 
-  const sortedProducts = filteredProducts.toSorted(sortingFn);
+  const sortedProducts = filteredProducts.toSorted(sortFunctions[sorting]);
 
   if (isLoading) return <h1>Loading items</h1>;
 
   return (
     <div className={c.page}>
       <div className={c.controls}>
-        <span className={c.noWrap}>
-          Categories:{" "}
-          <select
-            name="categories"
-            id="categories"
-            onChange={(e) => setCategory(e.target.value)}
-          >
-            {categories.map((category) => (
-              <option key={category} value={category}>
-                {upperCaseFirst(category)}
-              </option>
-            ))}
-          </select>
-        </span>{" "}
-        <span className={c.noWrap}>
-          Filter:{" "}
-          <select
-            name="filter"
-            id="filter"
-            onChange={(e) => setSortingFn(() => sortFunctions[e.target.value])}
-          >
-            {Object.entries(sortFunctions).map(([key, fn]) => (
-              <option key={key} value={key}>
-                {key}
-              </option>
-            ))}
-          </select>
-        </span>
+        <Dropdown label={"Categories"}>
+          {categories.map((category) => (
+            <div key={category} onClick={() => setCategory(category)}>
+              {upperCaseFirst(category)}
+            </div>
+          ))}
+        </Dropdown>
+        <Dropdown label={"Sort"}>
+          {Object.keys(sortFunctions).map((sorting) => (
+            <div key={sorting} onClick={() => setSorting(sorting)}>
+              {sorting}
+            </div>
+          ))}
+        </Dropdown>
       </div>
       <div className={`${c.productsContainer}`}>
         {sortedProducts.map((product) => (
